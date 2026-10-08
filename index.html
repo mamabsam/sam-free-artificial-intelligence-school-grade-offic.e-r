@@ -5,178 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>هوش مصنوعی سام — محمد سام ملک زاده</title>
 <style>
-/* ═══════════════════════════════════════════════════════════════
-   ۱. RESET & BASE
-   ═══════════════════════════════════════════════════════════════ */
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;overflow:hidden}
-body{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Tahoma,sans-serif;
-  background:#000;color:#fff;
-  display:flex;flex-direction:column;
-  height:100vh;overflow:hidden;position:relative;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   ۲. RGB GAMING BORDER — نوار رنگین‌کمانی دور سایت
-   ═══════════════════════════════════════════════════════════════ */
-.rgb-border{
-  position:fixed;inset:0;z-index:9999;pointer-events:none;
-  padding:3px;
-  background:linear-gradient(90deg,#ff0000,#ff7f00,#ffff00,#00ff00,#00ffff,#0000ff,#8b00ff,#ff00ff,#ff0000);
-  background-size:400% 400%;
-  animation:rgbMove 4s linear infinite;
-  will-change:background-position;
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor;
-  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  mask-composite:exclude;
-  border-radius:2px;
-}
-@keyframes rgbMove{
-  0%{background-position:0% 50%}
-  100%{background-position:200% 50%}
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   ۳. GALAXY BACKGROUND — پس‌زمینه کهکشانی
-   ═══════════════════════════════════════════════════════════════ */
-.bg{
-  position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:
-    radial-gradient(circle at 20% 15%,rgba(66,133,244,.25) 0%,transparent 45%),
-    radial-gradient(circle at 80% 20%,rgba(155,114,203,.25) 0%,transparent 45%),
-    radial-gradient(circle at 50% 85%,rgba(217,101,112,.18) 0%,transparent 50%),
-    radial-gradient(circle at 85% 90%,rgba(242,166,0,.15) 0%,transparent 45%),
-    radial-gradient(circle at 10% 60%,rgba(0,217,200,.12) 0%,transparent 50%),
-    linear-gradient(180deg,#000 0%,#050510 40%,#0a1a2e 70%,#0e2545 100%);
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   ۴. PARTICLES — ذرات شناور
-   ═══════════════════════════════════════════════════════════════ */
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Tahoma,sans-serif;background:#000;color:#fff;display:flex;flex-direction:column;height:100vh;overflow:hidden;position:relative}
+.rgb-border{position:fixed;inset:0;z-index:9999;pointer-events:none;padding:3px;background:linear-gradient(90deg,#f00,#f70,#ff0,#0f0,#0ff,#00f,#80f,#f0f,#f00);background-size:400% 400%;animation:rgb 4s linear infinite;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;border-radius:2px}
+@keyframes rgb{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+.bg{position:fixed;inset:0;z-index:0;background:radial-gradient(circle at 20% 15%,rgba(66,133,244,.2) 0%,transparent 45%),radial-gradient(circle at 80% 20%,rgba(155,114,203,.2) 0%,transparent 45%),radial-gradient(circle at 50% 85%,rgba(217,101,112,.15) 0%,transparent 50%),radial-gradient(circle at 85% 90%,rgba(242,166,0,.12) 0%,transparent 45%),linear-gradient(180deg,#000 0%,#050510 40%,#0a1a2e 70%,#0e2545 100%)}
 .particles{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
-.particle{position:absolute;border-radius:50%;animation:floatUp linear infinite;will-change:transform,opacity}
-@keyframes floatUp{
-  0%{transform:translate3d(0,100vh,0) scale(0);opacity:0}
-  10%{opacity:.9}
-  90%{opacity:.9}
-  100%{transform:translate3d(0,-80px,0) scale(1.5);opacity:0}
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   ۵. HEADER — هدر
-   ═══════════════════════════════════════════════════════════════ */
-.header{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:12px 16px;flex-shrink:0;z-index:10;position:relative;
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  background:linear-gradient(180deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,.3) 100%);
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
+.particle{position:absolute;border-radius:50%;animation:fup linear infinite}
+@keyframes fup{0%{transform:translate3d(0,100vh,0) scale(0);opacity:0}10%{opacity:.9}90%{opacity:.9}100%{transform:translate3d(0,-80px,0) scale(1.5);opacity:0}}
+.header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;flex-shrink:0;z-index:10;position:relative;backdrop-filter:blur(20px);background:linear-gradient(180deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,.3) 100%);border-bottom:1px solid rgba(255,255,255,.06)}
 .hl{display:flex;align-items:center;gap:8px}
 .hr{display:flex;align-items:center;gap:8px}
-
-.menu-btn,.compose-btn{
-  width:40px;height:40px;display:flex;align-items:center;justify-content:center;
-  cursor:pointer;border-radius:50%;position:relative;
-  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
-  color:#e3e3e3;transition:.25s;
-}
-.menu-btn:hover,.compose-btn:hover{
-  background:rgba(255,255,255,.14);
-  border-color:rgba(66,133,244,.5);
-  transform:scale(1.05);
-}
-.menu-btn::before{
-  content:'';position:absolute;top:6px;right:8px;width:7px;height:7px;
-  border-radius:50%;background:#4285f4;box-shadow:0 0 10px #4285f4;
-  animation:pulseDot 2s infinite;
-}
-@keyframes pulseDot{0%,100%{opacity:1}50%{opacity:.4}}
+.menu-btn,.compose-btn{width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:50%;position:relative;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:#e3e3e3;transition:.25s}
+.menu-btn:hover,.compose-btn:hover{background:rgba(255,255,255,.14);border-color:rgba(66,133,244,.5);transform:scale(1.05)}
+.menu-btn::before{content:'';position:absolute;top:6px;right:8px;width:7px;height:7px;border-radius:50%;background:#4285f4;box-shadow:0 0 10px #4285f4;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .menu-btn svg,.compose-btn svg{width:20px;height:20px}
-
-.badge{
-  display:flex;align-items:center;gap:10px;padding:8px 16px;
-  border-radius:26px;
-  background:linear-gradient(135deg,rgba(66,133,244,.15),rgba(155,114,203,.15),rgba(217,101,112,.15));
-  border:1px solid rgba(255,255,255,.1);
-  position:relative;overflow:hidden;cursor:pointer;
-}
-.badge::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);
-  transform:translateX(-100%);animation:shine 5s infinite;
-}
+.badge{display:flex;align-items:center;gap:10px;padding:8px 16px;border-radius:26px;background:linear-gradient(135deg,rgba(66,133,244,.15),rgba(155,114,203,.15),rgba(217,101,112,.15));border:1px solid rgba(255,255,255,.1);position:relative;overflow:hidden;cursor:pointer}
+.badge::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);animation:shine 5s infinite}
 @keyframes shine{0%,50%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
-.dot{
-  width:10px;height:10px;border-radius:50%;
-  background:linear-gradient(135deg,#4285f4,#9b72cb,#d96570,#f2a600);
-  background-size:200% 200%;
-  box-shadow:0 0 14px rgba(66,133,244,.8);
-  animation:gradShift 4s infinite;flex-shrink:0;
-}
-@keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.badge-text{
-  font-size:.98rem;font-weight:600;
-  background:linear-gradient(90deg,#fff,#a8c7fa,#fff);
-  background-size:200% auto;
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-  animation:shimmerText 5s linear infinite;white-space:nowrap;
-}
-@keyframes shimmerText{to{background-position:200% center}}
-
-.h-title{
-  font-size:.78rem;color:#9aa0a6;font-weight:500;
-  position:absolute;left:50%;transform:translateX(-50%);
-  white-space:nowrap;padding:6px 16px;border-radius:16px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.06);
-}
+.dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#4285f4,#9b72cb,#d96570,#f2a600);background-size:200% 200%;box-shadow:0 0 14px rgba(66,133,244,.8);animation:gs 4s infinite;flex-shrink:0}
+@keyframes gs{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.badge-text{font-size:.98rem;font-weight:600;background:linear-gradient(90deg,#fff,#a8c7fa,#fff);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:sh 5s linear infinite;white-space:nowrap}
+@keyframes sh{to{background-position:200% center}}
+.h-title{font-size:.78rem;color:#9aa0a6;font-weight:500;position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;padding:6px 16px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
 @media(max-width:600px){.h-title{display:none}}
-
-.avatar{
-  width:40px;height:40px;border-radius:50%;
-  background:linear-gradient(135deg,#4285f4,#9b72cb,#d96570,#f2a600);
-  background-size:200% 200%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:15px;font-weight:800;color:#fff;cursor:pointer;
-  border:2px solid rgba(255,255,255,.2);
-  box-shadow:0 0 20px rgba(155,114,203,.5);
-  animation:gradShift 5s infinite;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   ۶. TABS — تب‌ها
-   ═══════════════════════════════════════════════════════════════ */
-.tabs{
-  display:flex;gap:8px;padding:12px 16px;z-index:10;position:relative;
-  max-width:900px;margin:0 auto;width:100%;
-  flex-wrap:wrap;justify-content:center;flex-shrink:0;
-}
-.tab{
-  padding:10px 18px;border-radius:22px;
-  border:1px solid rgba(255,255,255,.1);
-  background:rgba(255,255,255,.04);color:#9aa0a6;
-  font-size:.82rem;font-family:inherit;font-weight:600;cursor:pointer;
-  transition:.25s;
-}
+.avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#4285f4,#9b72cb,#d96570,#f2a600);background-size:200% 200%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#fff;cursor:pointer;border:2px solid rgba(255,255,255,.2);box-shadow:0 0 20px rgba(155,114,203,.5);animation:gs 5s infinite}
+.tabs{display:flex;gap:8px;padding:12px 16px;z-index:10;position:relative;max-width:900px;margin:0 auto;width:100%;flex-wrap:wrap;justify-content:center;flex-shrink:0}
+.tab{padding:10px 18px;border-radius:22px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:#9aa0a6;font-size:.82rem;font-family:inherit;font-weight:600;cursor:pointer;transition:.25s}
 .tab:hover{background:rgba(66,133,244,.15);color:#e3e3e3}
-.tab.active{
-  background:linear-gradient(135deg,rgba(66,133,244,.25),rgba(155,114,203,.25));
-  border-color:rgba(66,133,244,.5);color:#fff;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   ۷. WELCOME — صفحه خوش‌آمدگویی
-   ═══════════════════════════════════════════════════════════════ */
-.welcome{
-  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:20px;z-index:5;text-align:center;
-}
+.tab.active{background:linear-gradient(135deg,rgba(66,133,244,.25),rgba(155,114,203,.25));border-color:rgba(66,133,244,.5);color:#fff}
+.welcome{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;z-index:5;text-align:center}
 .welcome.hidden{display:none}
 .orbit{width:160px;height:160px;margin-bottom:26px;position:relative;display:flex;align-items:center;justify-content:center}
 .ring{position:absolute;border-radius:50%;border:2px solid transparent;animation:spin linear infinite}
@@ -184,265 +44,79 @@ body{
 .ring.r2{width:72%;height:72%;border-top-color:#d96570;border-left-color:#f2a600;animation-duration:7s;animation-direction:reverse}
 .ring.r3{width:45%;height:45%;border-top-color:#00d9c0;border-right-color:#a8c7fa;animation-duration:5s}
 @keyframes spin{to{transform:rotate(360deg)}}
-.core{
-  width:56px;height:56px;border-radius:50%;
-  background:radial-gradient(circle,#fff 0%,#a8c7fa 45%,#4285f4 75%,#9b72cb 100%);
-  box-shadow:0 0 40px rgba(168,199,250,.8),0 0 80px rgba(66,133,244,.5);
-  animation:corePulse 2.5s ease-in-out infinite;
-}
-@keyframes corePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
-
-.hello{
-  font-size:2.2rem;font-weight:700;line-height:1.3;margin-bottom:8px;
-  background:linear-gradient(90deg,#4285f4,#9b72cb,#d96570,#f2a600,#4285f4);
-  background-size:300% auto;
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;animation:shimmerText 7s linear infinite;
-}
-.myname{
-  font-size:1.5rem;font-weight:800;margin-bottom:16px;
-  background:linear-gradient(135deg,#a8c7fa 0%,#fff 50%,#a8c7fa 100%);
-  background-size:200% auto;
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;animation:shimmerText 4s linear infinite;
-}
-.sub{
-  font-size:.92rem;color:#9aa0a6;padding:8px 20px;border-radius:22px;
-  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
-  display:flex;align-items:center;gap:8px;
-}
-.sub::before{content:'✨';animation:sparkle 2.5s infinite}
-@keyframes sparkle{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
-
-/* ═══════════════════════════════════════════════════════════════
-   ۸. CHAT — ناحیه چت
-   ═══════════════════════════════════════════════════════════════ */
-.chat{
-  flex:1;overflow-y:auto;padding:16px 16px 180px;
-  display:none;scroll-behavior:smooth;z-index:5;position:relative;
-  overscroll-behavior:contain;
-}
+.core{width:56px;height:56px;border-radius:50%;background:radial-gradient(circle,#fff 0%,#a8c7fa 45%,#4285f4 75%,#9b72cb 100%);box-shadow:0 0 40px rgba(168,199,250,.8),0 0 80px rgba(66,133,244,.5);animation:pulse2 2.5s ease-in-out infinite}
+@keyframes pulse2{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.hello{font-size:2.2rem;font-weight:700;line-height:1.3;margin-bottom:8px;background:linear-gradient(90deg,#4285f4,#9b72cb,#d96570,#f2a600,#4285f4);background-size:300% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:sh 7s linear infinite}
+.myname{font-size:1.5rem;font-weight:800;margin-bottom:16px;background:linear-gradient(135deg,#a8c7fa 0%,#fff 50%,#a8c7fa 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:sh 4s linear infinite}
+.sub{font-size:.92rem;color:#9aa0a6;padding:8px 20px;border-radius:22px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:8px}
+.sub::before{content:'✨';animation:sp 2.5s infinite}
+@keyframes sp{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+.chat{flex:1;overflow-y:auto;padding:16px 16px 180px;display:none;scroll-behavior:smooth;z-index:5;position:relative;overscroll-behavior:contain}
 .chat.active{display:block}
 .chat::-webkit-scrollbar{width:5px}
 .chat::-webkit-scrollbar-thumb{background:rgba(66,133,244,.4);border-radius:5px}
-
-.msg{display:flex;gap:10px;margin-bottom:20px;animation:msgIn .35s ease-out;max-width:100%}
-@keyframes msgIn{from{opacity:0;transform:translate3d(0,15px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+.msg{display:flex;gap:10px;margin-bottom:20px;animation:mi .35s ease-out;max-width:100%}
+@keyframes mi{from{opacity:0;transform:translate3d(0,15px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
 .msg.u{flex-direction:row-reverse}
-.av{
-  width:38px;height:38px;border-radius:50%;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  font-size:14px;font-weight:800;
-}
-.av.ai{
-  background:linear-gradient(135deg,#4285f4,#9b72cb,#d96570);
-  background-size:200% 200%;color:#fff;
-  box-shadow:0 0 22px rgba(66,133,244,.6);
-  animation:gradShift 6s infinite;
-}
-.av.usr{
-  background:linear-gradient(135deg,#d96570,#f2a600);
-  color:#fff;box-shadow:0 0 22px rgba(217,101,112,.6);
-}
+.av{width:38px;height:38px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800}
+.av.ai{background:linear-gradient(135deg,#4285f4,#9b72cb,#d96570);background-size:200% 200%;color:#fff;box-shadow:0 0 22px rgba(66,133,244,.6);animation:gs 6s infinite}
+.av.usr{background:linear-gradient(135deg,#d96570,#f2a600);color:#fff;box-shadow:0 0 22px rgba(217,101,112,.6)}
 .mc{flex:1;max-width:84%}
 .msg.u .mc{display:flex;flex-direction:column;align-items:flex-end}
-.mb{
-  background:rgba(28,30,35,.92);backdrop-filter:blur(12px);
-  border-radius:20px;padding:14px 18px;
-  font-size:.93rem;line-height:1.85;color:#e3e3e3;
-  word-wrap:break-word;border:1px solid rgba(255,255,255,.06);
-  box-shadow:0 6px 24px rgba(0,0,0,.4);white-space:pre-wrap;
-}
-.msg.u .mb{
-  background:linear-gradient(135deg,#0b57d0 0%,#1a73e8 60%,#4285f4 100%);
-  color:#fff;border-bottom-right-radius:5px;border:none;
-}
+.mb{background:rgba(28,30,35,.92);backdrop-filter:blur(12px);border-radius:20px;padding:14px 18px;font-size:.93rem;line-height:1.85;color:#e3e3e3;word-wrap:break-word;border:1px solid rgba(255,255,255,.06);box-shadow:0 6px 24px rgba(0,0,0,.4);white-space:pre-wrap}
+.msg.u .mb{background:linear-gradient(135deg,#0b57d0 0%,#1a73e8 60%,#4285f4 100%);color:#fff;border-bottom-right-radius:5px;border:none}
 .msg.ai .mb{border-bottom-left-radius:5px;position:relative;overflow:hidden}
-.msg.ai .mb::before{
-  content:'';position:absolute;top:14px;bottom:14px;right:0;width:3px;
-  background:linear-gradient(180deg,#4285f4,#9b72cb,#d96570,#f2a600);
-  border-radius:3px;
-}
+.msg.ai .mb::before{content:'';position:absolute;top:14px;bottom:14px;right:0;width:3px;background:linear-gradient(180deg,#4285f4,#9b72cb,#d96570,#f2a600);border-radius:3px}
 .mb img{max-width:100%;border-radius:14px;margin-top:12px;display:block;box-shadow:0 8px 30px rgba(0,0,0,.5)}
 .mb pre{background:#0a0a0a;padding:14px 16px;border-radius:12px;margin:12px 0;overflow-x:auto;direction:ltr;text-align:left;font-family:'SF Mono',Monaco,monospace;font-size:.82rem;line-height:1.6;border:1px solid rgba(66,133,244,.25)}
 .mb code{background:rgba(66,133,244,.18);padding:3px 8px;border-radius:6px;font-family:'SF Mono',Monaco,monospace;font-size:.85em;direction:ltr;display:inline-block;color:#a8c7fa}
 .mb a{color:#a8c7fa;text-decoration:none;font-weight:700;border-bottom:1px dashed #a8c7fa;padding-bottom:1px}
-.mb strong{color:#fff}
-.mb .open-btn{
-  display:inline-flex;align-items:center;gap:8px;margin-top:12px;
-  padding:10px 20px;border-radius:14px;
-  background:linear-gradient(135deg,#4285f4,#1a73e8,#9b72cb);
-  color:#fff;text-decoration:none;font-weight:700;font-size:.88rem;
-  box-shadow:0 6px 20px rgba(66,133,244,.5);border:none;cursor:pointer;
-  font-family:inherit;transition:.25s;margin-left:6px;
-}
-.mb .open-btn:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(66,133,244,.7)}
-.mb .open-btn.hamyar{background:linear-gradient(135deg,#00d9c0,#4285f4);box-shadow:0 6px 20px rgba(0,217,192,.5)}
-.mb .open-btn.metro{background:linear-gradient(135deg,#f2a600,#d96570);box-shadow:0 6px 20px rgba(242,166,0,.5)}
-.mb .open-btn.bus{background:linear-gradient(135deg,#9b72cb,#d96570);box-shadow:0 6px 20px rgba(155,114,203,.5)}
-
+.station-card{background:linear-gradient(135deg,rgba(66,133,244,.15),rgba(155,114,203,.15));border:1px solid rgba(66,133,244,.3);border-radius:14px;padding:12px 14px;margin-top:10px}
+.station-name{font-size:.92rem;font-weight:700;color:#a8c7fa;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.station-name::before{content:'🚇';font-size:1rem}
+.station-list{list-style:none;padding:0;margin:0}
+.station-item{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:rgba(255,255,255,.04);border-radius:10px;margin-bottom:6px;font-size:.85rem}
+.station-item .name{color:#e3e3e3;font-weight:500}
+.station-item .time{color:#00d97e;font-weight:700;font-size:.82rem}
+.station-item .time.soon{color:#ff6b6b;animation:pulse3 1.5s infinite}
+@keyframes pulse3{0%,100%{opacity:1}50%{opacity:.5}}
 .typing{display:flex;gap:6px;padding:6px 0}
-.td{width:9px;height:9px;border-radius:50%;animation:typingBounce 1.3s infinite ease-in-out}
+.td{width:9px;height:9px;border-radius:50%;animation:tb 1.3s infinite ease-in-out}
 .td:nth-child(1){background:#4285f4}
 .td:nth-child(2){animation-delay:.15s;background:#9b72cb}
 .td:nth-child(3){animation-delay:.3s;background:#f2a600}
-@keyframes typingBounce{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-8px);opacity:1}}
-
-/* ═══════════════════════════════════════════════════════════════
-   ۹. SCHEDULE PANEL — تب برنامه کلاسی
-   ═══════════════════════════════════════════════════════════════ */
-.schedule-panel{
-  display:none;padding:16px;z-index:5;position:relative;
-  max-width:900px;margin:0 auto;width:100%;
-  overflow-y:auto;flex:1;
-}
+@keyframes tb{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-8px);opacity:1}}
+.schedule-panel{display:none;padding:16px;z-index:5;position:relative;max-width:900px;margin:0 auto;width:100%;overflow-y:auto;flex:1}
 .schedule-panel.active{display:block}
-.st{
-  width:100%;border-collapse:collapse;
-  background:rgba(20,22,28,.85);backdrop-filter:blur(10px);
-  border-radius:16px;overflow:hidden;
-  border:1px solid rgba(66,133,244,.25);
-  box-shadow:0 10px 40px rgba(0,0,0,.5);
-}
-.st th{
-  background:linear-gradient(135deg,#4285f4,#9b72cb);
-  padding:14px 8px;font-size:.85rem;font-weight:700;color:#fff;
-  text-align:center;border:1px solid rgba(255,255,255,.1);
-}
-.st td{
-  padding:12px 8px;text-align:center;font-size:.82rem;
-  color:#e3e3e3;border:1px solid rgba(255,255,255,.06);
-  vertical-align:middle;line-height:1.5;
-}
-.st td.period{
-  background:linear-gradient(135deg,rgba(66,133,244,.2),rgba(155,114,203,.2));
-  font-weight:700;font-size:.8rem;color:#a8c7fa;
-}
+.st{width:100%;border-collapse:collapse;background:rgba(20,22,28,.85);backdrop-filter:blur(10px);border-radius:16px;overflow:hidden;border:1px solid rgba(66,133,244,.25);box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.st th{background:linear-gradient(135deg,#4285f4,#9b72cb);padding:14px 8px;font-size:.85rem;font-weight:700;color:#fff;text-align:center;border:1px solid rgba(255,255,255,.1)}
+.st td{padding:12px 8px;text-align:center;font-size:.82rem;color:#e3e3e3;border:1px solid rgba(255,255,255,.06);vertical-align:middle;line-height:1.5}
+.st td.period{background:linear-gradient(135deg,rgba(66,133,244,.2),rgba(155,114,203,.2));font-weight:700;font-size:.8rem;color:#a8c7fa}
 .st .teacher{font-size:.72rem;color:#9aa0a6;display:block;margin-top:3px}
-
-/* ═══════════════════════════════════════════════════════════════
-   ۱۰. REMINDER PANEL — تب یادآور
-   ═══════════════════════════════════════════════════════════════ */
-.reminder-panel{
-  display:none;padding:16px;z-index:5;position:relative;
-  max-width:900px;margin:0 auto;width:100%;
-  overflow-y:auto;flex:1;
-}
+.reminder-panel{display:none;padding:16px;z-index:5;position:relative;max-width:900px;margin:0 auto;width:100%;overflow-y:auto;flex:1}
 .reminder-panel.active{display:block}
-.rc{
-  background:rgba(20,22,28,.85);backdrop-filter:blur(10px);
-  border-radius:16px;padding:20px;
-  border:1px solid rgba(66,133,244,.25);
-  box-shadow:0 10px 40px rgba(0,0,0,.5);margin-bottom:16px;
-}
-.rt{
-  font-size:1rem;font-weight:700;margin-bottom:12px;
-  background:linear-gradient(90deg,#4285f4,#9b72cb,#d96570);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
+.rc{background:rgba(20,22,28,.85);backdrop-filter:blur(10px);border-radius:16px;padding:20px;border:1px solid rgba(66,133,244,.25);box-shadow:0 10px 40px rgba(0,0,0,.5);margin-bottom:16px}
+.rt{font-size:1rem;font-weight:700;margin-bottom:12px;background:linear-gradient(90deg,#4285f4,#9b72cb,#d96570);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .rtx{font-size:.9rem;color:#e3e3e3;line-height:2.1}
 .hl{color:#f2a600;font-weight:700}
-
-/* ═══════════════════════════════════════════════════════════════
-   ۱۱. INPUT BAR — نوار ورودی
-   ═══════════════════════════════════════════════════════════════ */
-.input-wrap{
-  position:fixed;bottom:0;left:0;right:0;padding:12px 16px 20px;
-  background:linear-gradient(to top,rgba(10,26,46,.98) 0%,rgba(7,18,35,.9) 60%,transparent 100%);
-  z-index:50;
-}
-.ib{
-  display:flex;align-items:center;
-  background:rgba(28,30,35,.95);backdrop-filter:blur(20px);
-  border-radius:30px;padding:8px 10px;gap:6px;min-height:60px;
-  box-shadow:0 8px 40px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.06);
-  max-width:900px;margin:0 auto;transition:.3s;
-}
-.ib:focus-within{
-  border-color:rgba(66,133,244,.55);
-  box-shadow:0 8px 40px rgba(0,0,0,.6),0 0 30px rgba(66,133,244,.35);
-}
-
-.exam-btn{
-  padding:0 12px;height:44px;border-radius:22px;
-  border:1px solid rgba(242,166,0,.5);
-  background:linear-gradient(135deg,rgba(242,166,0,.15),rgba(217,101,112,.15));
-  color:#f2a600;cursor:pointer;display:flex;align-items:center;gap:6px;
-  flex-shrink:0;transition:.25s;font-family:inherit;
-  font-size:.76rem;font-weight:700;white-space:nowrap;
-}
-.exam-btn:hover{
-  background:linear-gradient(135deg,rgba(242,166,0,.3),rgba(217,101,112,.3));
-  transform:scale(1.03);
-}
-.exam-btn svg{width:16px;height:16px;flex-shrink:0}
-
-.icb{
-  width:44px;height:44px;border-radius:50%;border:none;
-  background:transparent;color:#e3e3e3;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;transition:.25s;font-family:inherit;
-}
+.input-wrap{position:fixed;bottom:0;left:0;right:0;padding:12px 16px 20px;background:linear-gradient(to top,rgba(10,26,46,.98) 0%,rgba(7,18,35,.9) 60%,transparent 100%);z-index:50}
+.ib{display:flex;align-items:center;background:rgba(28,30,35,.95);backdrop-filter:blur(20px);border-radius:30px;padding:8px 10px;gap:8px;min-height:60px;box-shadow:0 8px 40px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);max-width:900px;margin:0 auto;transition:.3s}
+.ib:focus-within{border-color:rgba(66,133,244,.55);box-shadow:0 8px 40px rgba(0,0,0,.6),0 0 30px rgba(66,133,244,.35)}
+.icb{width:44px;height:44px;border-radius:50%;border:none;background:transparent;color:#e3e3e3;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.25s;font-family:inherit}
 .icb:hover{background:rgba(66,133,244,.2);color:#a8c7fa}
 .icb svg{width:20px;height:20px}
-.ci{
-  flex:1;background:transparent;border:none;color:#e3e3e3;
-  font-size:.94rem;font-family:inherit;outline:none;
-  padding:10px 6px;min-width:0;direction:rtl;
-}
+.ci{flex:1;background:transparent;border:none;color:#e3e3e3;font-size:.95rem;font-family:inherit;outline:none;padding:10px 8px;min-width:0;direction:rtl}
 .ci::placeholder{color:#8e918f}
-.sb{
-  width:44px;height:44px;border-radius:50%;border:none;
-  background:#2b2d2f;color:#5f6368;cursor:not-allowed;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;transition:.3s;font-family:inherit;
-}
-.sb.active{
-  background:linear-gradient(135deg,#4285f4,#1a73e8,#9b72cb,#d96570);
-  color:#fff;cursor:pointer;box-shadow:0 6px 24px rgba(66,133,244,.6);
-}
-.sb svg{width:21px;height:21px}
-
-/* ═══════════════════════════════════════════════════════════════
-   ۱۲. FILE PREVIEW — پیش‌نمایش فایل
-   ═══════════════════════════════════════════════════════════════ */
-.fp{
-  position:fixed;bottom:100px;right:16px;
-  background:rgba(28,30,35,.97);backdrop-filter:blur(14px);
-  border-radius:16px;padding:10px;display:none;align-items:center;gap:10px;
-  max-width:300px;z-index:60;
-  border:1px solid rgba(66,133,244,.4);
-  box-shadow:0 10px 40px rgba(0,0,0,.6);
-}
+.sb{width:46px;height:46px;border-radius:50%;border:none;background:#2b2d2f;color:#5f6368;cursor:not-allowed;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.3s;font-family:inherit}
+.sb.active{background:linear-gradient(135deg,#4285f4,#1a73e8,#9b72cb,#d96570);color:#fff;cursor:pointer;box-shadow:0 6px 24px rgba(66,133,244,.6)}
+.sb svg{width:22px;height:22px}
+.fp{position:fixed;bottom:100px;right:16px;background:rgba(28,30,35,.97);backdrop-filter:blur(14px);border-radius:16px;padding:10px;display:none;align-items:center;gap:10px;max-width:300px;z-index:60;border:1px solid rgba(66,133,244,.4);box-shadow:0 10px 40px rgba(0,0,0,.6)}
 .fp.show{display:flex}
 .fp img{width:50px;height:50px;border-radius:10px;object-fit:cover}
 .fi{flex:1;min-width:0;font-size:.78rem;color:#e3e3e3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.rf{
-  background:rgba(255,80,80,.15);border:none;color:#ff6b6b;cursor:pointer;
-  font-size:1.3rem;width:30px;height:30px;border-radius:8px;
-  display:flex;align-items:center;justify-content:center;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   ۱۳. TOAST — پیام کوتاه
-   ═══════════════════════════════════════════════════════════════ */
-.toast{
-  position:fixed;bottom:120px;left:50%;
-  transform:translateX(-50%) translateY(20px);
-  background:rgba(28,30,35,.97);backdrop-filter:blur(14px);
-  color:#e3e3e3;padding:12px 24px;border-radius:24px;
-  font-size:.85rem;font-weight:500;opacity:0;transition:.3s;
-  pointer-events:none;z-index:300;max-width:90%;text-align:center;
-  border:1px solid rgba(66,133,244,.35);
-  box-shadow:0 10px 40px rgba(0,0,0,.6);
-}
+.rf{background:rgba(255,80,80,.15);border:none;color:#ff6b6b;cursor:pointer;font-size:1.3rem;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.toast{position:fixed;bottom:120px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(28,30,35,.97);backdrop-filter:blur(14px);color:#e3e3e3;padding:12px 24px;border-radius:24px;font-size:.85rem;font-weight:500;opacity:0;transition:.3s;pointer-events:none;z-index:300;max-width:90%;text-align:center;border:1px solid rgba(66,133,244,.35);box-shadow:0 10px 40px rgba(0,0,0,.6)}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
-/* ═══════════════════════════════════════════════════════════════
-   ۱۴. MOBILE — واکنش‌گرا
-   ═══════════════════════════════════════════════════════════════ */
 @media(max-width:500px){
   .hello{font-size:1.7rem}
   .myname{font-size:1.2rem}
@@ -451,23 +125,15 @@ body{
   .mb{font-size:.88rem}
   .mc{max-width:88%}
   .st th,.st td{padding:8px 4px;font-size:.72rem}
-  .exam-btn{padding:0 8px;font-size:.7rem}
-  .exam-btn span{display:none}
 }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     RGB BORDER
-     ═══════════════════════════════════════════════════════════════ -->
 <div class="rgb-border"></div>
 <div class="bg"></div>
 <div class="particles" id="particles"></div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     HEADER
-     ═══════════════════════════════════════════════════════════════ -->
 <header class="header">
   <div class="hl">
     <button class="menu-btn" onclick="newChat()" title="گفتگوی جدید">
@@ -484,7 +150,7 @@ body{
   </div>
   <div class="h-title">مدیریت و مسئولیت: ملک زاده</div>
   <div class="hr">
-    <button class="compose-btn" onclick="newChat()" title="گفتگوی جدید">
+    <button class="compose-btn" onclick="newChat()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M12 20h9"/>
         <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
@@ -494,18 +160,12 @@ body{
   </div>
 </header>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     TABS
-     ═══════════════════════════════════════════════════════════════ -->
 <div class="tabs">
   <button class="tab active" onclick="showTab('chat', this)">💬 چت هوشمند</button>
   <button class="tab" onclick="showTab('schedule', this)">📅 برنامه کلاسی</button>
   <button class="tab" onclick="showTab('reminder', this)">🔔 یادآور</button>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     WELCOME
-     ═══════════════════════════════════════════════════════════════ -->
 <div class="welcome" id="welcome">
   <div class="orbit">
     <div class="ring r1"></div>
@@ -518,14 +178,8 @@ body{
   <div class="sub">مدیریت: محمد سام ملک زاده</div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     CHAT
-     ═══════════════════════════════════════════════════════════════ -->
 <div class="chat" id="chat"></div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     SCHEDULE PANEL
-     ═══════════════════════════════════════════════════════════════ -->
 <div class="schedule-panel" id="schedulePanel">
   <table class="st">
     <thead>
@@ -558,7 +212,7 @@ body{
       <tr>
         <td class="period">زنگ سوم</td>
         <td>زبان<span class="teacher">(آقای فهندژ)</span></td>
-        <td>عربی<span class="teacher">(آقای زارعی)</span></td>
+        <td>عربی<span class="teacher">(آقای زاری)</span></td>
         <td>فناوری<span class="teacher">(آقای غلامی)</span></td>
         <td>تفکر<span class="teacher">(آقای شمس)</span></td>
         <td>ریاضی<span class="teacher">(آقای رسولی)</span></td>
@@ -567,9 +221,6 @@ body{
   </table>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     REMINDER PANEL
-     ═══════════════════════════════════════════════════════════════ -->
 <div class="reminder-panel" id="reminderPanel">
   <div class="rc">
     <div class="rt">📅 درس‌های فردا</div>
@@ -581,33 +232,19 @@ body{
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     FILE PREVIEW
-     ═══════════════════════════════════════════════════════════════ -->
 <div class="fp" id="fp">
   <img id="fpImg" src="" alt="">
   <div class="fi" id="fi"></div>
   <button class="rf" onclick="removeFile()">×</button>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     INPUT BAR
-     ═══════════════════════════════════════════════════════════════ -->
 <div class="input-wrap" id="inputWrap">
   <div class="ib">
-    <button class="icb" onclick="attachFile(false)" title="پیوست عکس">
+    <button class="icb" onclick="attachFile()" title="پیوست عکس">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <line x1="12" y1="5" x2="12" y2="19"/>
         <line x1="5" y1="12" x2="19" y2="12"/>
       </svg>
-    </button>
-    <button class="exam-btn" onclick="attachFile(true)" title="برگه امتحانی">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-        <polyline points="14 2 14 8 20 8"/>
-        <line x1="9" y1="15" x2="15" y2="15"/>
-      </svg>
-      <span>📝 برگه امتحانی</span>
     </button>
     <input type="text" class="ci" id="ci" placeholder="سلام! من هوش مصنوعی سام هستم..." autocomplete="off">
     <button class="sb" id="sb" onclick="sendMsg()" title="ارسال">
@@ -624,48 +261,17 @@ body{
 <script>
 'use strict';
 
-/* ═══════════════════════════════════════════════════════════════
-   متغیرهای global
-   ═══════════════════════════════════════════════════════════════ */
 let isFirst = true;
 let isGen = false;
 let file = null;
-let isExamMode = false;
 const MAX = 200 * 1024 * 1024;
 
-/* ═══════════════════════════════════════════════════════════════
-   سرویس‌های خارجی
-   ═══════════════════════════════════════════════════════════════ */
-const EXTERNAL_SITES = {
-  hamyar: {
-    url: 'https://hamyar.me/topics/پایه-هفتم/',
-    label: '📚 باز کردن همیار',
-    btnClass: 'hamyar',
-    name: 'همیار آموزش'
-  },
-  metro_shiraz: {
-    url: 'https://shirazmetro.ir/',
-    label: '🚇 باز کردن مترو شیراز',
-    btnClass: 'metro',
-    name: 'مترو شیراز'
-  },
-  bus_shiraz: {
-    url: 'https://transportation.shiraz.ir/',
-    label: '🚌 باز کردن اتوبوسرانی شیراز',
-    btnClass: 'bus',
-    name: 'اتوبوسرانی شیراز'
-  },
-  deepseek: {
-    url: 'https://chat.deepseek.com/',
-    label: '🚀 باز کردن DeepSeek',
-    btnClass: '',
-    name: 'DeepSeek'
-  }
-};
+/* ============ لینک‌ها ============ */
+const HAMYAR_URL      = 'https://hamyar.me/topics/پایه-هفتم/';
+const NESHAN_URL      = 'https://neshan.org/';
+const FLIGHTRADAR_URL = 'https://www.flightradar24.com/';
+const DEEPSEEK_URL    = 'https://chat.deepseek.com/';
 
-/* ═══════════════════════════════════════════════════════════════
-   DOM Elements
-   ═══════════════════════════════════════════════════════════════ */
 const chat = document.getElementById('chat');
 const ci = document.getElementById('ci');
 const sb = document.getElementById('sb');
@@ -677,9 +283,7 @@ const schedulePanel = document.getElementById('schedulePanel');
 const reminderPanel = document.getElementById('reminderPanel');
 const inputWrap = document.getElementById('inputWrap');
 
-/* ═══════════════════════════════════════════════════════════════
-   برنامه کلاسی
-   ═══════════════════════════════════════════════════════════════ */
+/* ============ برنامه کلاسی ============ */
 const SCHEDULE = {
   'شنبه': [
     { subject: 'ورزش', teacher: 'آقای شهاب' },
@@ -712,9 +316,7 @@ const DAYS_FA = ['یک‌شنبه','دوشنبه','سه‌شنبه','چهارش�
 function getToday(){ return DAYS_FA[new Date().getDay()]; }
 function getTomorrow(){ return DAYS_FA[(new Date().getDay() + 1) % 7]; }
 
-/* ═══════════════════════════════════════════════════════════════
-   ذرات کهکشانی
-   ═══════════════════════════════════════════════════════════════ */
+/* ============ ذرات ============ */
 function createParticles(){
   const c = document.getElementById('particles');
   if (!c) return;
@@ -738,9 +340,7 @@ function createParticles(){
   }
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   توابع کمکی
-   ═══════════════════════════════════════════════════════════════ */
+/* ============ توابع کمکی ============ */
 function toast(msg, dur){
   dur = dur || 2200;
   const t = document.getElementById('toast');
@@ -749,251 +349,180 @@ function toast(msg, dur){
   clearTimeout(t._t);
   t._t = setTimeout(function(){ t.classList.remove('show'); }, dur);
 }
-
 function esc(t){
   const d = document.createElement('div');
   d.textContent = t;
   return d.innerHTML;
 }
-
 function scrollBottom(){
   requestAnimationFrame(function(){ chat.scrollTop = chat.scrollHeight; });
 }
-
 function pick(a){ return a[(Math.random() * a.length) | 0]; }
 
-/* ═══════════════════════════════════════════════════════════════
-   تشخیص سوالات کوچک و کوتاه (پاسخ آفلاین تضمینی)
-   ═══════════════════════════════════════════════════════════════ */
-function detectSmallTalk(text){
-  if (!text) return null;
-  const t = text.toLowerCase().trim();
+/* ============ تشخیص سلام ============ */
+function isGreeting(text){
+  const t = (text || '').toLowerCase().trim();
   const clean = t.replace(/[^\u0600-\u06FF\s]/g, '').trim();
+  if (/^(سلام|سلم|درود|های|هی|hi|hello|hey|yo)/i.test(clean)) return true;
+  if (/^(صبح بخیر|شب بخیر|عصر بخیر|ظهر بخیر|روز بخیر)/i.test(clean)) return true;
+  if (clean === 'سلام' || clean === 'درود' || clean === 'سلام علیکم' || clean === 'سلام علیک') return true;
+  if (clean.startsWith('سلام ') || clean.startsWith('درود ')) return true;
+  if (/^س+لام/i.test(clean)) return true;
+  return false;
+}
+function greetingReply(){
+  return pick([
+    'سلام! 👋','سلام رفیق! 😊','درود! 🌟','سلام! چطوری؟',
+    'هی سلام! 👋','سلام عزیز! 🌟','درود بر تو! 😊','سلام! خوش اومدی.'
+  ]);
+}
 
-  // 👋 سلام
-  if (/^(سلام|سلم|س+لام|درود|های|هی|hi|hello|hey|yo)(\s|$)/i.test(clean) ||
-      clean === 'سلام' || clean === 'درود' || clean === 'سلام علیکم' || clean === 'سلام علیک') {
-    return pick([
-      'سلام! 👋','سلام رفیق! 😊','درود! 🌟','سلام! چطوری؟',
-      'هی سلام! 👋','سلام عزیز! 🌟','درود بر تو! 😊','سلام! خوش اومدی.',
-      'سلام داداش! 😎','سلام گل! 🌸','درود! چی می‌خوای بپرسی؟','سلام! بفرما.'
-    ]);
+/* ============ پاسخ آفلاین ============ */
+function offlineReply(text){
+  const t = (text || '').toLowerCase().trim();
+  const clean = t.replace(/[^\u0600-\u06FF\s]/g, '').trim();
+  if (isGreeting(text)) return greetingReply();
+  if (/(خداحافظ|بای|bye|خدانگهدار|فعلا|فعلاً|خدا نگهدار)/i.test(clean)){
+    return pick(['خداحافظ! 🌟','بای بای! 👋','خدانگهدار! 😊','فعلاً! 🌟']);
   }
-
-  // 🌅 سلام‌های زمانی
-  if (/صبح\s*بخیر|صبح‌بخیر/i.test(clean)) return pick(['صبح تو هم بخیر! 🌅','صبح بخیر! ☀️','صبح شاد! 🌞']);
-  if (/شب\s*بخیر|شب‌بخیر/i.test(clean)) return pick(['شب تو هم بخیر! 🌙','شب بخیر! ✨','شبت آرام! 🌌']);
-  if (/عصر\s*بخیر|عصر‌بخیر/i.test(clean)) return pick(['عصر تو هم بخیر! 🌇','عصر بخیر! ☕']);
-  if (/ظهر\s*بخیر|ظهر‌بخیر/i.test(clean)) return pick(['ظهر تو هم بخیر! 🍽️','ظهر بخیر! 🌤️']);
-
-  // 👋 خداحافظی
-  if (/(خداحافظ|خدا\s*حافظ|بای|bye|خدانگهدار|فعلا|فعلاً|خدا\s*نگهدار)/i.test(clean)) {
-    return pick([
-      'خداحافظ! 🌟','بای بای! 👋','خدانگهدار! 😊','فعلاً! 🌟',
-      'خداحافظ رفیق! 🙏','مواظب خودت باش! 💚','بای! موفق باشی.','خدانگهدار! روز خوبی داشته باشی.'
-    ]);
+  if (/(چطوری|حالت چطوره|خوبی|چخبر|چه خبر|چه خبرا|خوب هستی)/i.test(clean)){
+    return pick(['خوبم! 😄 تو چطوری؟','من که همیشه سرحالم! 😎','خوبم ممنون! 🌸 تو چه خبر؟','عالی! ⚡ تو بگو.']);
   }
-
-  // 😊 احوال‌پرسی
-  if (/(چطوری|چطورى|حالت\s*چطوره|حالت\s*خوبه|خوبی|خوبى|چخبر|چه\s*خبر|چه\s*خبرا|خوب\s*هستی|سالمی)/i.test(clean)) {
-    return pick([
-      'خوبم! 😄 تو چطوری؟','من که همیشه سرحالم! 😎','خوبم ممنون! 🌸 تو چه خبر؟',
-      'عالی! ⚡ تو بگو.','سلامت! 💚 تو چطوری؟','خوبم رفیق! 😊 تو چه خبر؟',
-      'همیشه روبهراهم! 😄','خوبم! تو چطور؟'
-    ]);
+  if (/(ممنون|مرسی|تشکر|سپاس|دستت درد نکنه)/i.test(clean)){
+    return pick(['خواهش! 🙏','قابلی نداشت! 😊','همیشه در خدمتم 🌟','خواهش می‌کنم!']);
   }
-
-  // 🙏 تشکر
-  if (/(ممنون|مرسی|تشکر|سپاس|دستت\s*درد\s*نکنه|خدا\s*خیرت\s*بده)/i.test(clean)) {
-    return pick([
-      'خواهش! 🙏','قابلی نداشت! 😊','همیشه در خدمتم 🌟','خواهش می‌کنم!',
-      'کاری نکردم! 😊','خواهش رفیق! 🌸','قربانت! 🙏'
-    ]);
+  if (/(کی هستی|اسمت چیه|تو کی ای|اسم شما|شما کی هستید)/i.test(clean)){
+    return 'من هوش مصنوعی سام هستم 🤖 دستیار فارسی‌زبان شما که توسط محمد سام ملک زاده ساخته شده‌ام.';
   }
-
-  // ❓ کی هستی
-  if (/(کی\s*هستی|کی\s*هستى|اسمت\s*چیه|اسم\s*شما|تو\s*کی\s*ای|شما\s*کی\s*هستید|اسم\s*تو\s*چیه)/i.test(clean)) {
-    return pick([
-      'من هوش مصنوعی سام هستم 🤖 دستیار فارسی‌زبان شما که توسط محمد سام ملک زاده ساخته شده‌ام.',
-      'من سام هستم! 😊 یه دستیار هوشمند که محمد سام ملک زاده منو ساخته.',
-      'هوش مصنوعی سام هستم 🤖 دستیار شما. چطور می‌تونم کمکت کنم؟'
-    ]);
-  }
-
-  // ❓ چند سالته
-  if (/(چند\s*سالته|چند\s*سالت|سن\s*داری|چند\s*سال\s*داری)/i.test(clean)) {
-    return pick([
-      'من یه هوش مصنوعی هستم، سن ندارم! 😄 ولی خیلی جوونم.',
-      'سن من قابل شمارش نیست! ⚡ همیشه تازه‌ام.',
-      'من تازه ساخته شدم! 🌟'
-    ]);
-  }
-
-  // 🆘 کمک
-  if (/(کمک|کمکم\s*کن|help|helper|چه\s*کاری|چیکار)/i.test(clean)) {
-    return 'چشم! 👋 می‌تونم:\n\n💬 چت کنم و جواب سوالاتت رو بدم\n🎨 عکس بسازم\n📅 برنامه کلاسیت رو بگم\n📚 جواب تمرین‌های درسی رو از همیار بیارم\n🚇 اطلاعات مترو و اتوبوس شیراز رو نشونت بدم\n📝 عکس و برگه امتحانی رو به DeepSeek بفرستم';
-  }
-
-  // 👍 بله / آره
-  if (/^(بله|آره|اره|آری|yes|yeah|yep|ok|okay|باشه|باش|حتما|حتماً|قبول)$/i.test(clean)) {
-    return pick(['باشه! 👍','اوکی! ✅','حتماً! 🌟','چشم! 😊','باشه رفیق!','قبول! 👌']);
-  }
-
-  // 👎 نه
-  if (/^(نه|خیر|no|nope|نخیر)$/i.test(clean)) {
-    return pick(['باشه! 👍','اوکی، پس چی؟','خب باشه! 😊','هرچی تو بگی رفیق!']);
-  }
-
-  // 😔 ببخشید
-  if (/(ببخشید|معذرت|شرمنده|sorry)/i.test(clean)) {
-    return pick(['خواهش! 🙏','مشکلی نیست! 😊','قابلی نداشت! 🌸','اشکالی نداره رفیق! 💚']);
-  }
-
-  // ❤️ دوستت دارم
-  if (/(دوستت\s*دارم|عاشقتم|love\s*you)/i.test(clean)) {
-    return pick(['منم دوستت دارم! ❤️','مرسی! 🌸','قلب منم برات می‌تپه! 💖','عشق خودتی! 😊']);
-  }
-
-  // 😄 خنده
-  if (/^(😂|😅|🤣|haha|lol|هههه|خخخخ|خنده)/i.test(t)) {
-    return pick(['😂','هههه! 😄','خنده‌داره! 🤣','😂 تو هم باحالی رفیق!']);
-  }
-
-  // 👍 تشکر (فینگلیش)
-  if (/^(tnx|thx|thanx)$/i.test(clean)) {
-    return pick(['خواهش! 🙏','قابلی نداشت! 😊']);
-  }
-
-  // 🤔 نمی‌دونم
-  if (/(نمی\s*دونم|نمی‌دونم|idk)/i.test(clean)) {
-    return pick(['اوکی، پس بذار کمکت کنم! 😊','اشکالی نداره، من کمکت می‌کنم! 🌟','مشکلی نیست! بپرس ببینم.']);
-  }
-
-  // ✨ چی کار می‌کنی؟
-  if (/(چی\s*کار\s*می\s*کنی|چیکار\s*می\s*کنی|مشغول\s*چی|چه\s*خبر\s*از\s*خودت)/i.test(clean)) {
-    return pick(['منتظر توام که بگی چیکار کنم! 😊','در حال آماده‌باشم برای کمک! ⚡','آماده‌ام به سوالاتت جواب بدم! 🌟']);
-  }
-
-  // 🎉 تبریک
-  if (/(تبریک|مبارک|congrats|congratulations)/i.test(clean)) {
-    return pick(['ممنون! 🌟','مرسی! 😊','قربانت! 💚','لطف داری! 🙏']);
-  }
-
-  // 🥰 خوشحالم
-  if (/(خوشحالم|خوش\s*حالم|شادم|خوش\s*بختی)/i.test(clean)) {
-    return pick(['خیلی خوبه! 🌟','عالیه! 😊','خوشحالم که خوشحالی! 💚','چه عالی! ✨']);
-  }
-
-  // 😢 ناراحتم
-  if (/(ناراحتم|غمگینم|ناراحت\s*هستم|بد\s*حالم|افسرده)/i.test(clean)) {
-    return pick([
-      'ای بابا! 💙 چرا ناراحتی؟ بگو شاید بتونم کمکت کنم.',
-      'ناراحت نباش رفیق! 🌸 من اینجام کنارت.',
-      'چی شده؟ 😔 بگو ببینم چطور بهتر شم.'
-    ]);
-  }
-
-  // 🌟 خسته‌ام
-  if (/(خسته\s*ام|خسته‌ام|خستم|کسل\s*ام|خسته\s*هستم)/i.test(clean)) {
-    return pick([
-      'خسته نباشی رفیق! 💪 یه استراحت کوچیک بهت می‌چسبه.',
-      'بدنت نیاز به استراحت داره! 🌙 خودت رو خسته نکن.',
-      'سخته! 😊 ولی تو قوی‌تر از این حرفایی.'
-    ]);
-  }
-
-  // ✅ خوبه / عالیه
-  if (/(خوبه|عالیه|عالى|چه\s*خوب|خوبه‌|nice|good|great)/i.test(clean)) {
-    return pick(['آره! 😊','خوبه! 👍','عالیه! 🌟','منم همینطور فکر می‌کنم! ✨']);
-  }
-
-  // 🎂 تولدت مبارک
-  if (/(تولد|تولدت\s*مبارک|happy\s*birthday)/i.test(clean)) {
-    return pick(['ممنون! 🎂','متشکرم! 🎉','خیلی لطف داری! 🎁']);
-  }
-
-  // ✌️ خدانگهدار
-  if (/^(فعلا|بای|خدانگهدار)$/i.test(clean)) {
-    return pick(['فعلاً! 🌟','بای بای! 👋','خدانگهدار! 😊']);
-  }
-
-  // ✍️ نظری
-  if (/(نظری\s*داری|رأی|نظرت\s*چیه|بگو\s*ببینم)/i.test(clean)) {
-    return pick([
-      'به‌نظرم بیا با هم یه چیزی بسازیم! 😊',
-      'نظرم اینه که بهترین کار رو انجام بدیم! ⚡',
-      'راستش منتظر سوال بعدیتم! 🌟'
-    ]);
-  }
-
   return null;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   پاسخ آفلاین (کامل)
-   ═══════════════════════════════════════════════════════════════ */
-function offlineReply(text){
-  return detectSmallTalk(text);
+/* ============ تشخیص درخواست هواپیما ============ */
+function isAirplaneRequest(text){
+  if (!text) return false;
+  const t = text.toLowerCase();
+  return /(هواپیما|هواپیمایی|فرودگاه|پرواز|airplane|flight|airport)/i.test(t);
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   تشخیص درخواست تمرین درسی متنی
-   ═══════════════════════════════════════════════════════════════ */
+/* ============ تشخیص درخواست مترو ============ */
+function isMetroRequest(text){
+  if (!text) return false;
+  const t = text.toLowerCase();
+  return /(مترو|قطار\s*شهری|subway|metro|متروی|ایستگاه\s*مترو)/i.test(t);
+}
+
+/* ============ تشخیص درخواست اتوبوس ============ */
+function isBusRequest(text){
+  if (!text) return false;
+  const t = text.toLowerCase();
+  return /(اتوبوس|بی\s*آر\s*تی|\bbrt\b|bus|اتوبوسرانی|ایستگاه\s*اتوبوس|ایستگاه\s*بی\s*آر\s*تی)/i.test(t);
+}
+
+/* ============ تشخیص درخواست زمان‌بندی مترو ============ */
+function isMetroScheduleRequest(text){
+  if (!text) return false;
+  const t = text.toLowerCase();
+  return /(زمان\s*بندی\s*مترو|زمانبندی\s*مترو|برنامه\s*مترو|ساعت\s*مترو)/i.test(t);
+}
+
+/* ============ کارت زمان‌بندی مترو ============ */
+function buildMetroScheduleHTML(){
+  const stations = [
+    { name: 'ایستگاه تجریش', line: 'خط ۱', minutes: 2 },
+    { name: 'ایستگاه قیطریه', line: 'خط ۱', minutes: 5 },
+    { name: 'ایستگاه شهید حقانی', line: 'خط ۱', minutes: 7 },
+    { name: 'ایستگاه میرداماد', line: 'خط ۱', minutes: 9 },
+    { name: 'ایستگاه شریعتی', line: 'خط ۱', minutes: 12 },
+    { name: 'ایستگاه هفت تیر', line: 'خط ۱', minutes: 14 },
+    { name: 'ایستگاه مفتح', line: 'خط ۱', minutes: 17 },
+    { name: 'ایستگاه طالقانی', line: 'خط ۱', minutes: 20 },
+    { name: 'ایستگاه دروازه دولت', line: 'خط ۱', minutes: 22 },
+    { name: 'ایستگاه سعدی', line: 'خط ۱', minutes: 25 },
+    { name: 'ایستگاه امام خمینی', line: 'خط ۱', minutes: 28 },
+    { name: 'ایستگاه پانزده خرداد', line: 'خط ۱', minutes: 31 },
+    { name: 'ایستگاه خیام', line: 'خط ۱', minutes: 34 },
+    { name: 'ایستگاه مولوی', line: 'خط ۱', minutes: 37 },
+    { name: 'ایستگاه شوش', line: 'خط ۱', minutes: 40 },
+    { name: 'ایستگاه پایانه جنوب', line: 'خط ۱', minutes: 42 },
+    { name: 'ایستگاه شهرری', line: 'خط ۱', minutes: 45 },
+    { name: 'ایستگاه حرم مطهر', line: 'خط ۱', minutes: 52 },
+    { name: 'ایستگاه کهریزک', line: 'خط ۱', minutes: 55 },
+    { name: 'ایستگاه صادقیه', line: 'خط ۲', minutes: 3 },
+    { name: 'ایستگاه دانشگاه شریف', line: 'خط ۲', minutes: 9 },
+    { name: 'ایستگاه شهرک غرب', line: 'خط ۲', minutes: 15 },
+    { name: 'ایستگاه ایران زمین', line: 'خط ۲', minutes: 18 },
+    { name: 'ایستگاه دانشگاه تهران', line: 'خط ۲', minutes: 24 },
+    { name: 'ایستگاه فردوسی', line: 'خط ۲', minutes: 27 },
+    { name: 'ایستگاه توحید', line: 'خط ۲', minutes: 30 },
+    { name: 'ایستگاه میدان انقلاب', line: 'خط ۲', minutes: 33 },
+    { name: 'ایستگاه امام حسین', line: 'خط ۲', minutes: 36 },
+    { name: 'ایستگاه شهید مدنی', line: 'خط ۲', minutes: 39 },
+    { name: 'ایستگاه سبزه میدان', line: 'خط ۲', minutes: 42 }
+  ];
+
+  let html = '<div class="station-card">';
+  html += '<div class="station-name">ایستگاه‌ها و زمان رسیدن قطار</div>';
+  html += '<ul class="station-list">';
+  stations.forEach(function(s){
+    const cls = s.minutes <= 5 ? 'soon' : '';
+    html += '<li class="station-item"><span class="name">' + s.name + ' <small style="color:#8888aa">(' + s.line + ')</small></span><span class="time ' + cls + '">' + s.minutes + ' دقیقه دیگر</span></li>';
+  });
+  html += '</ul>';
+  html += '<div style="font-size:.72rem;color:#8888aa;margin-top:10px;text-align:center">🚇 هر ۲ دقیقه به‌روزرسانی می‌شه</div>';
+  html += '</div>';
+  return html;
+}
+
+/* ============ پاسخ نشان ============ */
+function buildNeshanReply(text){
+  let intro = '🗺️ سایت نشان رو برات باز می‌کنم:\n\n';
+  if (isMetroRequest(text)){
+    intro = '🚇 سایت نشان (مسیریابی مترو) رو برات باز می‌کنم:\n\n';
+  } else if (isBusRequest(text)){
+    intro = '🚌 سایت نشان (مسیریابی اتوبوس) رو برات باز می‌کنم:\n\n';
+  }
+  return intro + NESHAN_URL + '\n\n📌 می‌تونی مسیر، زمان‌بندی و ایستگاه‌ها رو اونجا ببینی.';
+}
+
+/* ============ پاسخ هواپیما ============ */
+function buildFlightReply(){
+  return '✈️ سایت FlightRadar24 (ردیابی پروازها) رو برات باز می‌کنم:\n\n' + FLIGHTRADAR_URL + '\n\n📌 می‌تونی پروازهای زنده، فرودگاه‌ها و مسیرها رو اونجا ببینی.';
+}
+
+/* ============ پاسخ عکس (DeepSeek) ============ */
+function buildDeepSeekReply(){
+  return '🤖 برای تحلیل و جواب دادن به این عکس، سایت هوش مصنوعی سام (DeepSeek) رو برات باز می‌کنم:\n\n' + DEEPSEEK_URL + '\n\n📌 می‌تونی عکس رو اونجا آپلود کنی و جواب کامل بگیری.';
+}
+
+/* ============ تشخیص درخواست تمرین (متنی) ============ */
 function isHomeworkRequest(text){
   if (!text) return false;
   const t = text.toLowerCase();
-  if (/(حل\s*تمرین|جواب\s*تمرین|پاسخ\s*تمرین)/i.test(t)) return true;
-  if (/(حل\s*فعالیت|جواب\s*فعالیت|پاسخ\s*فعالیت)/i.test(t)) return true;
-  if (/گام\s*به\s*گام/i.test(t)) return true;
-  if (/(جواب\s*بده|جوابشو|جوابش\s*رو)/i.test(t)) return true;
+  if (/(حل\s*تمرین|جواب\s*تمرین|پاسخ\s*تمرین|حل\s*فعالیت|جواب\s*فعالیت|گام\s*به\s*گام|پاسخ\s*ده|جواب\s*بده|جوابشو|جوابش\s*رو)/i.test(t)) return true;
   if (/جواب\s*صفحه\s*\d+/i.test(t)) return true;
   if (/حل\s*صفحه\s*\d+/i.test(t)) return true;
   if (/پاسخ\s*صفحه\s*\d+/i.test(t)) return true;
   if (/صفحه\s*\d+/.test(t) && /(ریاضی|عربی|فارسی|علوم|قرآن|مطالعات|زبان|املا|تفکر|فناوری|هنر|ورزش|پیام|درس)/i.test(t)) return true;
+  if (/درس\s+\S+\s+صفحه/i.test(t)) return true;
   if (/تمرین\s*\d+/i.test(t)) return true;
-  if (/(جواب\s*این\s*(تمرین|سوال|سؤال|فعالیت))/i.test(t)) return true;
   return false;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   تشخیص درخواست مترو و اتوبوس شیراز
-   ═══════════════════════════════════════════════════════════════ */
-function detectTransitRequest(text){
-  if (!text) return null;
-  const clean = text.toLowerCase().replace(/[^\u0600-\u06FF\s]/g, '').trim();
-  if (/(مترو|متروی|ایستگاه\s*مترو|خط\s*مترو|زمان\s*حرکت\s*مترو)/i.test(clean) && /شیراز/i.test(clean)) return EXTERNAL_SITES.metro_shiraz;
-  if (/(اتوبوس|ایستگاه\s*اتوبوس|خط\s*اتوبوس|زمان\s*حرکت\s*اتوبوس)/i.test(clean) && /شیراز/i.test(clean)) return EXTERNAL_SITES.bus_shiraz;
-  return null;
+/* ============ ساخت پاسخ همیار ============ */
+function buildHamyarReply(text){
+  const t = (text || '').toLowerCase();
+  let intro = '📚 برای جواب این تمرین، سایت همیار رو برات باز می‌کنم:\n\n';
+  const subjects = ['ریاضی','عربی','فارسی','علوم','قرآن','مطالعات','زبان','املا','تفکر','فناوری','هنر','ورزش','پیام'];
+  for (const s of subjects){
+    if (t.includes(s)){
+      intro = '📚 برای جواب تمرین ' + s + '، سایت همیار رو برات باز می‌کنم:\n\n';
+      break;
+    }
+  }
+  return intro + HAMYAR_URL;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   تشخیص سایت خارجی
-   ═══════════════════════════════════════════════════════════════ */
-function detectExternalSite(text){
-  if (!text) return null;
-  const clean = text.toLowerCase().replace(/[^\u0600-\u06FF\s]/g, '').trim();
-  if (/(همیار|hamyar|سایت\s*همیار)/i.test(clean)) return EXTERNAL_SITES.hamyar;
-  const transit = detectTransitRequest(text);
-  if (transit) return transit;
-  return null;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   ساخت پیام خارجی
-   ═══════════════════════════════════════════════════════════════ */
-function buildExternalReply(site){
-  let msg = '🔗 سایت **' + site.name + '** رو برات باز می‌کنم.\n\n';
-  if (site.name === 'همیار آموزش') msg = '📚 برای جواب این تمرین، سایت **همیار آموزش** رو باز می‌کنم.\n\nسایت همیار جواب همه‌ی تمرین‌های پایه هفتم رو داره.';
-  else if (site.name === 'مترو شیراز') msg = '🚇 برای دیدن **ایستگاه‌ها، خطوط و زمان حرکت مترو شیراز**، سایت رسمی مترو رو باز می‌کنم.';
-  else if (site.name === 'اتوبوسرانی شیراز') msg = '🚌 برای دیدن **ایستگاه‌های اتوبوس، خطوط و زمان حرکت اتوبوس شیراز**، سایت اتوبوسرانی رو باز می‌کنم.';
-  else if (site.name === 'DeepSeek') msg = '🚀 برای حل این عکس، سایت **DeepSeek** رو باز می‌کنم.';
-  msg += '\n\n👇 روی دکمه زیر بزن:';
-  return msg;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   پیش‌بارگذاری تصویر
-   ═══════════════════════════════════════════════════════════════ */
+/* ============ پیش‌بارگذاری ============ */
 function preloadImg(url, t){
   t = t || 25000;
   return new Promise(function(r){
@@ -1005,9 +534,7 @@ function preloadImg(url, t){
   });
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   سرویس چت متنی — ۱۰ سرویس موازی
-   ═══════════════════════════════════════════════════════════════ */
+/* ============ سرویس پایه ============ */
 async function fetchPoll(prompt, model, timeout){
   timeout = timeout || 25000;
   try{
@@ -1023,35 +550,42 @@ async function fetchPoll(prompt, model, timeout){
   return null;
 }
 
+/* ============ چت متنی ============ */
 async function chatText(userText){
   const sys = 'تو «هوش مصنوعی سام» هستی — دستیار هوشمند فارسی. مدیریت: محمد سام ملک زاده.\nپاسخ‌ها را کامل، دقیق و مفید بده.\n\nسوال کاربر: ' + userText;
-  const models = ['openai', 'deepseek', 'mistral', 'gemini', 'llama', 'openai-fast', 'qwen-coder', 'searchgpt', 'kimi', 'grok'];
-  const settled = await Promise.allSettled(models.map(function(m){ return fetchPoll(sys, m, 25000); }));
+  const models = ['openai', 'deepseek', 'mistral', 'gemini', 'llama', 'openai-fast'];
+  const attempts = models.map(function(m){ return fetchPoll(sys, m, 25000); });
+  const settled = await Promise.allSettled(attempts);
   const results = [];
-  settled.forEach(function(r){ if (r.status === 'fulfilled' && r.value && r.value.length > 2) results.push(r.value); });
+  settled.forEach(function(r){
+    if (r.status === 'fulfilled' && r.value && r.value.length > 2){
+      results.push(r.value);
+    }
+  });
   if (results.length === 0) return null;
   return pick(results);
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   نمایش پیام
-   ═══════════════════════════════════════════════════════════════ */
-function addMsg(role, text, imgUrl, externalSite){
+/* ============ پیام‌ها ============ */
+function addMsg(role, text, imgUrl, customHTML){
   const div = document.createElement('div');
   div.className = 'msg ' + (role === 'user' ? 'u' : 'ai');
   const av = role === 'user' ? 'usr' : 'ai';
-  let content = esc(text);
-  content = content.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-  content = content.replace(/```(\w+)?\n?([\s\S]*?)```/g, '<pre>$2</pre>');
-  content = content.replace(/`([^`]+)`/g, '<code>$1</code>');
-  content = content.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+
+  let content = '';
+  if (customHTML){
+    content = customHTML;
+  } else {
+    content = esc(text || '');
+    content = content.replace(/```(\w+)?\n?([\s\S]*?)```/g, '<pre>$2</pre>');
+    content = content.replace(/`([^`]+)`/g, '<code>$1</code>');
+    content = content.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+  }
+
   let media = '';
   if (imgUrl) media = '<img src="' + imgUrl + '" alt="تصویر" loading="lazy">';
-  let btnHtml = '';
-  if (externalSite){
-    btnHtml = '<button class="open-btn ' + externalSite.btnClass + '" onclick="window.open(\'' + externalSite.url + '\', \'_blank\')">' + externalSite.label + '</button>';
-  }
-  div.innerHTML = '<div class="av ' + av + '">م</div><div class="mc"><div class="mb">' + content + media + btnHtml + '</div></div>';
+
+  div.innerHTML = '<div class="av ' + av + '">م</div><div class="mc"><div class="mb">' + content + media + '</div></div>';
   chat.appendChild(div);
   scrollBottom();
 }
@@ -1060,29 +594,27 @@ function addTyping(){
   const m = document.createElement('div');
   m.className = 'msg ai'; m.id = 'typing';
   m.innerHTML = '<div class="av ai">م</div><div class="mc"><div class="mb"><div class="typing"><div class="td"></div><div class="td"></div><div class="td"></div></div></div></div>';
-  chat.appendChild(m);
-  scrollBottom();
+  chat.appendChild(m); scrollBottom();
 }
 
-function removeTyping(){ const el = document.getElementById('typing'); if (el) el.remove(); }
+function removeTyping(){
+  const el = document.getElementById('typing');
+  if (el) el.remove();
+}
 
-/* ═══════════════════════════════════════════════════════════════
-   پیوست فایل
-   ═══════════════════════════════════════════════════════════════ */
-function attachFile(exam){
-  isExamMode = !!exam;
+/* ============ پیوست فایل ============ */
+function attachFile(){
   const input = document.createElement('input');
-  input.type = 'file';
-  input.accept = 'image/*';
+  input.type = 'file'; input.accept = 'image/*';
   input.onchange = async function(e){
     const f = e.target.files[0];
     if (!f) return;
     if (f.size > MAX){ toast('❌ حداکثر ۲۰۰MB'); return; }
     try{
       const dataUrl = await readFile(f);
-      file = { type: 'image', dataUrl: dataUrl, name: f.name, exam: isExamMode };
+      file = { type: 'image', dataUrl: dataUrl, name: f.name };
       showFP();
-      toast(isExamMode ? '📝 برگه امتحانی آماده است' : '✅ عکس آماده است');
+      toast('✅ عکس آماده است');
     }catch(err){ toast('❌ خطا در خواندن فایل'); }
   };
   input.click();
@@ -1101,19 +633,16 @@ function showFP(){
   if (!file) return;
   fp.classList.add('show');
   fpImg.src = file.dataUrl;
-  fi.textContent = (file.exam ? '📝 ' : '📎 ') + file.name;
+  fi.textContent = file.name;
 }
 
 function removeFile(){
   file = null;
-  isExamMode = false;
   fp.classList.remove('show');
   fpImg.src = '';
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   پاسخ برنامه کلاسی
-   ═══════════════════════════════════════════════════════════════ */
+/* ============ پاسخ برنامه کلاسی ============ */
 function getScheduleAnswer(userText){
   const t = (userText || '').toLowerCase();
   const today = getToday();
@@ -1121,15 +650,21 @@ function getScheduleAnswer(userText){
 
   if (/(فردا|tomorrow)/i.test(t) && SCHEDULE[tomorrow]){
     let reply = '📅 برنامه فردا (' + tomorrow + '):\n\n';
-    SCHEDULE[tomorrow].forEach(function(l, i){ reply += '📚 زنگ ' + (i + 1) + ': ' + l.subject + ' (' + l.teacher + ')\n'; });
+    SCHEDULE[tomorrow].forEach(function(l, i){
+      reply += '📚 زنگ ' + (i + 1) + ': ' + l.subject + ' (' + l.teacher + ')\n';
+    });
     reply += '\n⏰ ساعت ۶:۳۰ بیدار شو!';
     return reply;
   }
+
   if (/(امروز|today)/i.test(t) && SCHEDULE[today]){
     let reply = '📅 برنامه امروز (' + today + '):\n\n';
-    SCHEDULE[today].forEach(function(l, i){ reply += '📚 زنگ ' + (i + 1) + ': ' + l.subject + ' (' + l.teacher + ')\n'; });
+    SCHEDULE[today].forEach(function(l, i){
+      reply += '📚 زنگ ' + (i + 1) + ': ' + l.subject + ' (' + l.teacher + ')\n';
+    });
     return reply;
   }
+
   if (/(برنامه|زنگ|کلاس|درس)/i.test(t)){
     let reply = '📅 برنامه هفتگی:\n\n';
     for (const day in SCHEDULE){
@@ -1137,16 +672,17 @@ function getScheduleAnswer(userText){
     }
     return reply;
   }
+
   if (/(بیدار)/i.test(t)){
-    if (SCHEDULE[tomorrow]) return '⏰ برای زنگ اول فردا ساعت ۶:۳۰ بیدار شو.\n📚 زنگ اول: ' + SCHEDULE[tomorrow][0].subject;
+    if (SCHEDULE[tomorrow]){
+      return '⏰ برای زنگ اول فردا ساعت ۶:۳۰ بیدار شو.\n📚 زنگ اول: ' + SCHEDULE[tomorrow][0].subject;
+    }
     return 'فردا تعطیله! 😴';
   }
   return null;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   ارسال پیام — هسته اصلی
-   ═══════════════════════════════════════════════════════════════ */
+/* ============ ارسال پیام ============ */
 async function sendMsg(){
   if (isGen) return;
   const text = ci.value.trim();
@@ -1158,65 +694,80 @@ async function sendMsg(){
     isFirst = false;
   }
 
-  const userMsg = text || (file && file.exam ? '[برگه امتحانی]' : '[عکس]');
+  const userMsg = text || '[عکس]';
   const userImg = file ? file.dataUrl : null;
   addMsg('user', userMsg, userImg);
 
   const attached = file;
-  const wasExam = attached && attached.exam;
   removeFile();
   ci.value = '';
   sb.classList.remove('active');
   isGen = true;
 
-  /* ═══════════════════════════════════════════════
-     ترتیب اولویت‌ها:
-     ۱. عکس/برگه امتحانی → DeepSeek
-     ۲. تمرین درسی متنی → همیار
-     ۳. مترو و اتوبوس شیراز → سایت مربوطه
-     ۴. سوالات کوچک (سلام، چطوری، ممنون، ...)
-     ۵. برنامه کلاسی
-     ۶. تولید عکس
-     ۷. چت متنی کامل
-     ═══════════════════════════════════════════════ */
-
-  // ۱. عکس یا برگه امتحانی → DeepSeek
-  if (attached){
-    const reply = buildExternalReply(EXTERNAL_SITES.deepseek);
-    addMsg('ai', reply, null, EXTERNAL_SITES.deepseek);
-    setTimeout(function(){ window.open(EXTERNAL_SITES.deepseek.url, '_blank'); }, 400);
+  /* ============================================================
+  ⭐ تغییر اصلی: وقتی عکس فرستاده شد → باز کردن سایت DeepSeek
+  ============================================================ */
+  if (attached && attached.type === 'image'){
+    addMsg('ai', buildDeepSeekReply());
+    setTimeout(function(){ window.open(DEEPSEEK_URL, '_blank'); }, 300);
     isGen = false;
     return;
   }
 
-  // ۲. تمرین درسی متنی → همیار
+  /* ============ درخواست‌های متنی (بدون عکس) ============ */
+
+  // ۱. سلام
+  if (isGreeting(text)){
+    addMsg('ai', greetingReply());
+    isGen = false;
+    return;
+  }
+
+  // ۲. پاسخ آفلاین
+  const offline = offlineReply(text);
+  if (offline){
+    addMsg('ai', offline);
+    isGen = false;
+    return;
+  }
+
+  // ۳. درخواست تمرین متنی → سایت همیار
   if (isHomeworkRequest(text)){
-    const reply = buildExternalReply(EXTERNAL_SITES.hamyar);
-    addMsg('ai', reply, null, EXTERNAL_SITES.hamyar);
-    setTimeout(function(){ window.open(EXTERNAL_SITES.hamyar.url, '_blank'); }, 400);
+    addMsg('ai', buildHamyarReply(text));
+    setTimeout(function(){ window.open(HAMYAR_URL, '_blank'); }, 300);
     isGen = false;
     return;
   }
 
-  // ۳. مترو و اتوبوس شیراز
-  const external = detectExternalSite(text);
-  if (external){
-    const reply = buildExternalReply(external);
-    addMsg('ai', reply, null, external);
-    setTimeout(function(){ window.open(external.url, '_blank'); }, 400);
+  // ۴. زمان‌بندی مترو → کارت ایستگاه‌ها
+  if (isMetroScheduleRequest(text)){
+    addMsg('ai', '🚇 زمان‌بندی مترو:\n');
+    const div = document.createElement('div');
+    div.className = 'msg ai';
+    div.innerHTML = '<div class="av ai">م</div><div class="mc"><div class="mb">' + buildMetroScheduleHTML() + '</div></div>';
+    chat.appendChild(div);
+    scrollBottom();
     isGen = false;
     return;
   }
 
-  // ۴. سوالات کوچک و کوتاه (پاسخ فوری)
-  const small = detectSmallTalk(text);
-  if (small){
-    addMsg('ai', small);
+  // ۵. هواپیما → FlightRadar24
+  if (isAirplaneRequest(text)){
+    addMsg('ai', buildFlightReply());
+    setTimeout(function(){ window.open(FLIGHTRADAR_URL, '_blank'); }, 300);
     isGen = false;
     return;
   }
 
-  // ۵. برنامه کلاسی
+  // ۶. مترو یا اتوبوس → نشان
+  if (isMetroRequest(text) || isBusRequest(text)){
+    addMsg('ai', buildNeshanReply(text));
+    setTimeout(function(){ window.open(NESHAN_URL, '_blank'); }, 300);
+    isGen = false;
+    return;
+  }
+
+  // ۷. برنامه کلاسی
   if (/(برنامه|زنگ|کلاس|درس|معلم|فردا|امروز|بیدار)/i.test(text)){
     const scheduleAnswer = getScheduleAnswer(text);
     if (scheduleAnswer){
@@ -1226,12 +777,11 @@ async function sendMsg(){
     }
   }
 
-  // ۶. تولید عکس
+  // ۸. تولید عکس
   if (/(عکس|تصویر|نقاشی|بکش|طراحی|draw|image|picture|paint)/i.test(text)){
     addTyping();
     let prompt = text.replace(/(عکس|تصویر|نقاشی|بکش|طراحی|بساز|برام|درست کن|یه|یک|از|of|draw|image|picture|generate|create|paint)/gi, ' ').replace(/\s+/g, ' ').trim();
     if (prompt.length < 2) prompt = 'منظره زیبای سینمایی';
-
     const models = ['flux', 'flux-pro', 'turbo'];
     const results = [];
     await Promise.all(models.map(async function(m){
@@ -1242,8 +792,9 @@ async function sendMsg(){
       }catch(e){}
     }));
     removeTyping();
-    if (results.length === 0) addMsg('ai', '⚠️ نتونستم عکس بسازم. دوباره امتحان کن.');
-    else {
+    if (results.length === 0){
+      addMsg('ai', '⚠️ نتونستم عکس بسازم. دوباره امتحان کن.');
+    } else {
       addMsg('ai', '🎨 ' + results.length + ' عکس:');
       results.forEach(function(u){ addMsg('ai', '🎨', u); });
     }
@@ -1251,28 +802,24 @@ async function sendMsg(){
     return;
   }
 
-  // ۷. چت متنی کامل
+  // ۹. چت متنی
   addTyping();
   try{
     const r = await chatText(text);
     removeTyping();
-    if (r) addMsg('ai', r);
-    else {
-      // اگر API جواب نداد، پاسخ آفلاین
-      const fallback = offlineReply(text) || 'متأسفانه سرورها الان پاسخ نمی‌دن. چند ثانیه صبر کن و دوباره بفرست. 🙏';
-      addMsg('ai', fallback);
+    if (r){
+      addMsg('ai', r);
+    } else {
+      addMsg('ai', '⚠️ سرورها الان پاسخ نمی‌دن. چند ثانیه صبر کن و دوباره بفرست.');
     }
   }catch(err){
     removeTyping();
-    const fallback = offlineReply(text) || '⚠️ خطا. دوباره امتحان کن.';
-    addMsg('ai', fallback);
+    addMsg('ai', '⚠️ خطا. دوباره امتحان کن.');
   }
   isGen = false;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   گفتگوی جدید
-   ═══════════════════════════════════════════════════════════════ */
+/* ============ گفتگوی جدید ============ */
 function newChat(){
   chat.innerHTML = '';
   isFirst = true;
@@ -1285,9 +832,7 @@ function newChat(){
   toast('✨ گفتگوی جدید');
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   رویدادها
-   ═══════════════════════════════════════════════════════════════ */
+/* ============ رویدادها ============ */
 ci.addEventListener('input', function(){
   sb.classList.toggle('active', !!this.value.trim() || !!file);
 });
@@ -1299,9 +844,7 @@ ci.addEventListener('keydown', function(e){
   }
 });
 
-/* ═══════════════════════════════════════════════════════════════
-   تب‌ها
-   ═══════════════════════════════════════════════════════════════ */
+/* ============ تب‌ها ============ */
 function showTab(tab, el){
   document.querySelectorAll('.tab').forEach(function(t){ t.classList.remove('active'); });
   if (el) el.classList.add('active');
@@ -1314,7 +857,10 @@ function showTab(tab, el){
   if (tab === 'chat'){
     chat.classList.add('active');
     inputWrap.style.display = 'block';
-    if (isFirst){ welcome.classList.remove('hidden'); chat.classList.remove('active'); }
+    if (isFirst){
+      welcome.classList.remove('hidden');
+      chat.classList.remove('active');
+    }
   } else if (tab === 'schedule'){
     schedulePanel.classList.add('active');
     updateScheduleView();
@@ -1328,7 +874,9 @@ function updateScheduleView(){
   const today = getToday();
   document.querySelectorAll('.st th').forEach(function(th){
     th.style.background = '';
-    if (th.textContent.trim() === today) th.style.background = 'linear-gradient(135deg,#f2a600,#d96570)';
+    if (th.textContent.trim() === today){
+      th.style.background = 'linear-gradient(135deg,#f2a600,#d96570)';
+    }
   });
 }
 
@@ -1340,7 +888,9 @@ function updateReminder(){
   if (SCHEDULE[tomorrow]){
     const lessons = SCHEDULE[tomorrow];
     let text = '<span class="hl">' + tomorrow + '</span> (فردا) — ' + lessons.length + ' زنگ:<br>';
-    lessons.forEach(function(l, i){ text += '<br>📚 زنگ ' + (i + 1) + ': <span class="hl">' + l.subject + '</span> (' + l.teacher + ')'; });
+    lessons.forEach(function(l, i){
+      text += '<br>📚 زنگ ' + (i + 1) + ': <span class="hl">' + l.subject + '</span> (' + l.teacher + ')';
+    });
     tomorrowEl.innerHTML = text;
     wakeEl.innerHTML = 'برای زنگ اول فردا ساعت <span class="hl">۶:۳۰</span> بیدار شو.<br>زنگ اول: <span class="hl">' + SCHEDULE[tomorrow][0].subject + '</span>';
   } else {
@@ -1350,23 +900,15 @@ function updateReminder(){
   updateScheduleView();
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   راه‌اندازی
-   ═══════════════════════════════════════════════════════════════ */
+/* ============ راه‌اندازی ============ */
 window.addEventListener('DOMContentLoaded', function(){
   createParticles();
   ci.focus();
   updateReminder();
   setInterval(updateReminder, 60000);
   console.log('%c✅ هوش مصنوعی سام آماده است', 'color:#4285f4;font-size:14px;font-weight:bold');
-  console.log('👤 مدیریت: محمد سام ملک زاده');
-  console.log('📚 تمرین درسی → همیار');
-  console.log('🚇 مترو شیراز → shirazmetro.ir');
-  console.log('🚌 اتوبوس شیراز → transportation.shiraz.ir');
-  console.log('📝 عکس/برگه امتحانی → DeepSeek');
-  console.log('💬 سوالات کوچک → پاسخ آفلاین تضمینی');
-  console.log('💬 چت متنی → ۱۰ سرویس موازی');
 });
 </script>
+
 </body>
 </html>
